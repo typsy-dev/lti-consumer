@@ -10,7 +10,9 @@ namespace Typsy.LTI.Consumer.Sample.Controllers
         public IActionResult LaunchLtiRequest()
         {
             var viewmodel = new LaunchLtiRequestViewModel();
+
             viewmodel.Initialize();
+
             return View(viewmodel);
         }
     }

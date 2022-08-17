@@ -5,14 +5,18 @@
     form action. All this view needs to do is create the form and ask
     the browser to submit it.
 *@
+
     <form id="form" action="@Model.LtiRequest.Url" method="post">
         @foreach (var pair in Model.LtiRequest.Parameters)
         {
             <input type="hidden" name="@pair.Key" value="@pair.Value" />
         }
     </form>
+
 @section Scripts {
-    <script>$(function () {
+    <script id="script-launch-lti-consumer">
+        $(function () {
             $("#form").submit();
-        });</script>
+        });
+    </script>
 }
