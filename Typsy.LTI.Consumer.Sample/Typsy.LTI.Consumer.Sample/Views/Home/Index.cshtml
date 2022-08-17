@@ -1,0 +1,10 @@
+﻿@using Typsy.LTI.Consumer.Sample.Controllers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h5>Launch Typsy Lesson via LTI integration</h5>
+    <br />
+    <h4><a asp-controller="ConsumerTest" asp-action="@nameof(ConsumerTestController.LaunchLtiRequest)"> Launch Typsy Lesson</a></h4>
+</div>
