@@ -65,8 +65,8 @@ namespace Typsy.LTI.Consumer.Sample.ViewModels.ConsumerTest
             ltiRequest.AddCustomParameter("display_title", "true"); // NOTE: display lesson title.
             ltiRequest.AddCustomParameter("display_border", "true");  // NOTE: display border around the lesson.
             ltiRequest.AddCustomParameter("display_description", "true");  // NOTE: display lesson description.
-            ltiRequest.AddCustomParameter("language", "hin");  // NOTE: display title and description in the selected language if a translation for it exists, otherwise display text in english. ISO-639–2 code to be used.
-            ltiRequest.AddCustomParameter("caption", "hin");   // NOTE: display lesson closed caption in the selected language. ISO-639–2 code to be used.
+            //ltiRequest.AddCustomParameter("language", "hin");  // NOTE: display title and description in the selected language if a translation for it exists, otherwise display text in english. ISO-639–2 code to be used.
+            //ltiRequest.AddCustomParameter("caption", "hin");   // NOTE: display lesson closed caption in the selected language. ISO-639–2 code to be used.
 
             return ltiRequest;
         }
