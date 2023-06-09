@@ -14,7 +14,7 @@ namespace Typsy.LTI.Consumer.Sample.ViewModels.ConsumerTest
         public void Initialize()
         {
             this.LtiRequest = this.GetLtiLaunchRequest();
-            this.LtiRequest.Signature = this.LtiRequest.SubstituteCustomVariablesAndGenerateSignature("secret"); // NOTE: ask  Typsy to provide the Secret value.
+            this.LtiRequest.Signature = this.LtiRequest.SubstituteCustomVariablesAndGenerateSignature("secret"); // NOTE: ask  Typsy to provide the Secret value (sometimes called the Private key).
         }
 
         // https://github.com/andyfmiller/LtiLibrary1.6/blob/master/LtiLibrary.Core/Lti1/LtiRequest.cs
@@ -29,7 +29,7 @@ namespace Typsy.LTI.Consumer.Sample.ViewModels.ConsumerTest
 
             var ltiRequest = new LtiRequest(LtiConstants.BasicLaunchLtiMessageType)
             {
-                ConsumerKey = "consumer key", // NOTE: ask Typsy to provide the Consumer Key value.
+                ConsumerKey = "consumer key", // NOTE: ask Typsy to provide the Consumer Key value (sometimes also called the Public key).
                 ResourceLinkId = "launch",
                 Url = new Uri("https://lti.typsy.com/xxx/lesson/1426") // NOTE: ask  Typsy to provide the url of the page to access LTI links for Typsy lessons.
             };
@@ -65,6 +65,7 @@ namespace Typsy.LTI.Consumer.Sample.ViewModels.ConsumerTest
             ltiRequest.AddCustomParameter("display_title", "true"); // NOTE: display lesson title.
             ltiRequest.AddCustomParameter("display_border", "true");  // NOTE: display border around the lesson.
             ltiRequest.AddCustomParameter("display_description", "true");  // NOTE: display lesson description.
+            ltiRequest.AddCustomParameter("custom_send_outcome", "true");  // NOTE: send an outcome, specified at ltiRequest.LisOutcomeServiceUrl, back to the LMS.
             //ltiRequest.AddCustomParameter("language", "hin");  // NOTE: display title and description in the selected language if a translation for it exists, otherwise display text in english. ISO-639–2 code to be used.
             //ltiRequest.AddCustomParameter("caption", "hin");   // NOTE: display lesson closed caption in the selected language. ISO-639–2 code to be used.
 
